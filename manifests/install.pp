@@ -12,4 +12,8 @@ class steamcmd::install inherits steamcmd {
     ensure => directory,
   }
 
+  package { $required_packages:
+    ensure => installed,
+  }
+
 }

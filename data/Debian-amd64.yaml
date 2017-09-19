@@ -1,0 +1,3 @@
+---
+steamcmd::required_packages:
+  - 'lib32gcc1'

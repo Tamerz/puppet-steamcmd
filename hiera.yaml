@@ -6,6 +6,9 @@ defaults:
   data_hash: 'yaml_data'
 
 hierarchy:
+  - name: 'Operating System Family and Architecture'
+    path: '%{facts.os.family}-%{facts.architecture}.yaml'
+
   - name: 'Operating System'
     path: '%{facts.kernel}.yaml'
 
