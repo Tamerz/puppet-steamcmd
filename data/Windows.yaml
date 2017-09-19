@@ -1,3 +1,4 @@
 ---
 steamcmd::installdir: 'c:/steamcmd'
 steamcmd::download_path: 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip'
+steamcmd::required_packages: []

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pp'
 
 describe 'steamcmd' do
   on_supported_os(facterversion: '2.4').each do |os, os_facts|
@@ -18,7 +17,6 @@ describe 'steamcmd' do
 					'ensure' => 'directory'})
 				}
 
-				pp os_facts[:architecture]
 				case os_facts[:os]['family']
 				when 'RedHat'
 					if os_facts[:architecture] == 'x86_64'
