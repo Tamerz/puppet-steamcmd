@@ -17,6 +17,8 @@ describe 'steamcmd' do
 					'ensure' => 'directory'})
 				}
 
+				it { should contain_user('steamcmd') }
+
 				case os_facts[:os]['family']
 				when 'RedHat'
 					if os_facts[:architecture] == 'x86_64'

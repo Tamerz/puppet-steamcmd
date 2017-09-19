@@ -8,7 +8,8 @@
 #   include steamcmd
 class steamcmd (
   String $installdir,
-  Array[String] $required_packages
+  Array[String] $required_packages,
+  Optional[String] $user
 ) {
 
   contain steamcmd::install

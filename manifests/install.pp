@@ -16,4 +16,10 @@ class steamcmd::install inherits steamcmd {
     ensure => installed,
   }
 
+  if $user {
+    user { $user:
+      ensure => present,
+    }
+  }
+
 }
