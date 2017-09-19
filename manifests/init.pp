@@ -6,5 +6,10 @@
 #
 # @example
 #   include steamcmd
-class steamcmd {
+class steamcmd (
+  String $installdir
+) {
+
+  contain steamcmd::install
+
 }
