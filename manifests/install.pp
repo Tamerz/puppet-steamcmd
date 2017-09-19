@@ -22,4 +22,14 @@ class steamcmd::install inherits steamcmd {
     }
   }
 
+  archive { 'installer':
+    ensure       => present,
+    path         => $archive_path,
+    extract      => true,
+    extract_path => $installdir,
+    source       => $download_path,
+    creates      => "${installdir}/steamcmd.exe",
+    cleanup      => true,
+  }
+
 }

@@ -2,3 +2,4 @@
 steamcmd::installdir: '/opt/steamcmd'
 steamcmd::download_path: 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz'
 steamcmd::user: 'steamcmd'
+steamcmd::archive_path: '/tmp/steamcmd_linux.tar.gz'

@@ -17,6 +17,17 @@ describe 'steamcmd' do
 				it { should contain_file('c:/steamcmd').with({
 					'ensure' => 'directory'})
 				}
+
+				it { should contain_archive('installer').with({
+					'ensure'       => 'present',
+					'path'         => 'c:/temp/steamcmd.zip',
+					'extract'      => true,
+					'extract_path' => 'c:/steamcmd',
+					'source'       => 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip',
+					'creates'      => 'c:/steamcmd/steamcmd.exe',
+					'cleanup'      => true})
+				}
+
 			when 'Linux'
 				it { should contain_file('/opt/steamcmd').with({
 					'ensure' => 'directory'})

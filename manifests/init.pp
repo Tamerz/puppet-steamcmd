@@ -9,6 +9,8 @@
 class steamcmd (
   String $installdir,
   Array[String] $required_packages,
+  String $download_path,
+  String $archive_path,
   Optional[String] $user
 ) {
 
