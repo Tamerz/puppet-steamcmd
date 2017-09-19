@@ -1,7 +1,12 @@
 require 'spec_helper'
 
 describe 'steamcmd' do
-  on_supported_os(facterversion: '2.4').each do |os, os_facts|
+	test_on = {
+		:facterversion  => '2.4',
+		:hardwaremodels => ['x86_64', 'i386']
+	}
+
+  on_supported_os(test_on).each do |os, os_facts|
     context "on #{os}" do
       let(:facts) { os_facts }
 
@@ -24,9 +29,13 @@ describe 'steamcmd' do
 					if os_facts[:architecture] == 'x86_64'
 						it { should contain_package('glibc.i686') }
 						it { should contain_package('libstdc++.i686') }
-					elsif os_facts[:architecture] == 'x86'
+					elsif os_facts[:architecture] == 'i386'
 						it { should contain_package('glibc') }
 						it { should contain_package('libstdc++') }
+					end
+				when 'Debian'
+					if os_facts[:architecture] == 'x86_64'
+						it { should contain_package('lib32gcc1') }
 					end
 				end
 			end

@@ -1,0 +1,4 @@
+---
+steamcmd::required_packages:
+  - 'glibc'
+  - 'libstdc++'
