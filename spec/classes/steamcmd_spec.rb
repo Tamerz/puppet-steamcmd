@@ -36,10 +36,19 @@ describe 'steamcmd' do
         it {
           is_expected.to contain_file('/opt/steamcmd').with(
             'ensure' => 'directory',
-          )
+            'owner'  => 'steamcmd',
+            'group'  => 'steamcmd',
+            'mode'   => '0755',
+          ).that_requires('User[steamcmd]')
         }
 
-        it { is_expected.to contain_user('steamcmd') }
+        it {
+          is_expected.to contain_user('steamcmd').with(
+            'ensure' => 'present',
+            'system' => true,
+            'home'   => '/opt/steamcmd',
+          )
+        }
 
         it {
           is_expected.to contain_archive('installer').with(
@@ -50,6 +59,14 @@ describe 'steamcmd' do
             'source'       => 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz',
             'creates'      => '/opt/steamcmd/steamcmd.sh',
             'cleanup'      => true,
+          )
+        }
+
+        it {
+          is_expected.to contain_exec('initialize').with(
+            'command' => '/opt/steamcmd/steamcmd.sh +login anonymous +quit',
+            'cwd'     => '/opt/steamcmd',
+            'user'    => 'steamcmd',
           )
         }
 

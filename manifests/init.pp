@@ -12,7 +12,8 @@ class steamcmd (
   String $download_path,
   String $archive_path,
   String $exe_name,
-  Optional[String] $user
+  Optional[String] $user,
+  Optional[String] $group,
 ) {
 
   contain steamcmd::install

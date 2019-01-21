@@ -9,7 +9,11 @@
 class steamcmd::install inherits steamcmd {
 
   file { $steamcmd::installdir:
-    ensure => directory,
+    ensure  => directory,
+    owner   => $steamcmd::user,
+    group   => $steamcmd::group,
+    mode    => '0755',
+    require => User[$steamcmd::user],
   }
 
   package { $steamcmd::required_packages:
@@ -19,6 +23,8 @@ class steamcmd::install inherits steamcmd {
   if $steamcmd::user {
     user { $steamcmd::user:
       ensure => present,
+      system => true,
+      home   => $steamcmd::installdir,
     }
   }
 
@@ -30,6 +36,12 @@ class steamcmd::install inherits steamcmd {
     source       => $steamcmd::download_path,
     creates      => "${steamcmd::installdir}/${steamcmd::exe_name}",
     cleanup      => true,
+  }
+
+  exec { 'initialize':
+    command => "${steamcmd::installdir}/${steamcmd::exe_name} +login anonymous +quit",
+    cwd     => $steamcmd::installdir,
+    user    => $steamcmd::user,
   }
 
 }

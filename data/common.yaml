@@ -1,2 +1,3 @@
 ---
 steamcmd::user: 'steamcmd'
+steamcmd::group: 'steamcmd'
