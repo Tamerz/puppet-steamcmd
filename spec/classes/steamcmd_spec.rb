@@ -59,7 +59,9 @@ describe 'steamcmd' do
             'source'       => 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz',
             'creates'      => '/opt/steamcmd/steamcmd.sh',
             'cleanup'      => true,
-          )
+            'user'         => 'steamcmd',
+            'group'        => 'steamcmd',
+          ).that_requires('User[steamcmd]')
         }
 
         it {

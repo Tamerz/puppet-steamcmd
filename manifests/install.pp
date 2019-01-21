@@ -36,6 +36,9 @@ class steamcmd::install inherits steamcmd {
     source       => $steamcmd::download_path,
     creates      => "${steamcmd::installdir}/${steamcmd::exe_name}",
     cleanup      => true,
+    user         => $steamcmd::user,
+    group        => $steamcmd::group,
+    require      => User[$steamcmd::user],
   }
 
   exec { 'initialize':
