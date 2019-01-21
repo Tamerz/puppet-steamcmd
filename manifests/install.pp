@@ -45,6 +45,7 @@ class steamcmd::install inherits steamcmd {
     command => "${steamcmd::installdir}/${steamcmd::exe_name} +login anonymous +quit",
     cwd     => $steamcmd::installdir,
     user    => $steamcmd::user,
+    creates => "${steamcmd::installdir}/Steam",
   }
 
 }

@@ -69,6 +69,7 @@ describe 'steamcmd' do
             'command' => '/opt/steamcmd/steamcmd.sh +login anonymous +quit',
             'cwd'     => '/opt/steamcmd',
             'user'    => 'steamcmd',
+            'creates' => '/opt/steamcmd/Steam',
           )
         }
 
