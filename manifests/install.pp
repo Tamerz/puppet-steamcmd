@@ -8,27 +8,27 @@
 #   include steamcmd::install
 class steamcmd::install inherits steamcmd {
 
-  file { $installdir:
+  file { $steamcmd::installdir:
     ensure => directory,
   }
 
-  package { $required_packages:
+  package { $steamcmd::required_packages:
     ensure => installed,
   }
 
-  if $user {
-    user { $user:
+  if $steamcmd::user {
+    user { $steamcmd::user:
       ensure => present,
     }
   }
 
   archive { 'installer':
     ensure       => present,
-    path         => $archive_path,
+    path         => $steamcmd::archive_path,
     extract      => true,
-    extract_path => $installdir,
-    source       => $download_path,
-    creates      => "${installdir}/steamcmd.exe",
+    extract_path => $steamcmd::installdir,
+    source       => $steamcmd::download_path,
+    creates      => "${steamcmd::installdir}/steamcmd.exe",
     cleanup      => true,
   }
 
