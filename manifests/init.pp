@@ -11,6 +11,7 @@ class steamcmd (
   Array[String] $required_packages,
   String $download_path,
   String $archive_path,
+  String $exe_name,
   Optional[String] $user
 ) {
 

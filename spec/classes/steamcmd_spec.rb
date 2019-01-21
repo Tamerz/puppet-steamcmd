@@ -41,6 +41,18 @@ describe 'steamcmd' do
 
         it { is_expected.to contain_user('steamcmd') }
 
+        it {
+          is_expected.to contain_archive('installer').with(
+            'ensure'       => 'present',
+            'path'         => '/tmp/steamcmd_linux.tar.gz',
+            'extract'      => true,
+            'extract_path' => '/opt/steamcmd',
+            'source'       => 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz',
+            'creates'      => '/opt/steamcmd/steamcmd.sh',
+            'cleanup'      => true,
+          )
+        }
+
         case os_facts[:os]['family']
         when 'RedHat'
           if os_facts[:architecture] == 'x86_64'

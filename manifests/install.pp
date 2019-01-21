@@ -28,7 +28,7 @@ class steamcmd::install inherits steamcmd {
     extract      => true,
     extract_path => $steamcmd::installdir,
     source       => $steamcmd::download_path,
-    creates      => "${steamcmd::installdir}/steamcmd.exe",
+    creates      => "${steamcmd::installdir}/${steamcmd::exe_name}",
     cleanup      => true,
   }
 
