@@ -18,7 +18,7 @@ steamcmd is used to host many different game servers based on Steam's platform.
 
 ### Beginning with steamcmd
 
-`include steamcmd` will install steamcmd in `/opt/steamcmd` for Linux and `C:\Steamcmd`
+`include steamcmd` will install steamcmd in `/opt/steamcmd` for Linux and `C:\Steamcmd` for Windows.
 
 
 ## Usage
@@ -26,7 +26,9 @@ steamcmd is used to host many different game servers based on Steam's platform.
 To customize the installion, the following parameters are available:
 
 `installdir`: The location to install steamcmd to. Default on Linux is `/opt/steamcmd` and Windows is `C:\Steamcmd`
+
 `user`: This will create a user that owns the directory. Default is `steamcmd`
+
 `group`: This will create a group that owns the directory. Default is `steamcmd`
 
 For instance, to install to a different location with different users and groups:
