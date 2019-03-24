@@ -1,6 +1,6 @@
 {
   "name": "tamerz-steamcmd",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Tames McTigue",
   "summary": "Installs and configures the Steam Console Client (SteamCMD)",
   "license": "Apache-2.0",
