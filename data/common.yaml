@@ -1,3 +1,4 @@
 ---
 steamcmd::user: 'steamcmd'
 steamcmd::group: 'steamcmd'
+steamcmd::file_mode: '0755'

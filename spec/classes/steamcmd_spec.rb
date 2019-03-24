@@ -17,6 +17,9 @@ describe 'steamcmd' do
         it {
           is_expected.to contain_file('c:/steamcmd').with(
             'ensure' => 'directory',
+            'owner'  => nil,
+            'group'  => nil,
+            'mode'   => nil,
           )
         }
 
@@ -29,6 +32,14 @@ describe 'steamcmd' do
             'source'       => 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip',
             'creates'      => 'c:/steamcmd/steamcmd.exe',
             'cleanup'      => true,
+          )
+        }
+
+        it {
+          is_expected.to contain_exec('initialize').with(
+            'command' => 'c:/steamcmd/steamcmd.exe +login anonymous +quit',
+            'cwd'     => 'c:/steamcmd',
+            'creates' => 'c:/steamcmd/public',
           )
         }
 
@@ -69,7 +80,7 @@ describe 'steamcmd' do
             'command' => '/opt/steamcmd/steamcmd.sh +login anonymous +quit',
             'cwd'     => '/opt/steamcmd',
             'user'    => 'steamcmd',
-            'creates' => '/opt/steamcmd/Steam',
+            'creates' => '/opt/steamcmd/public',
           )
         }
 
