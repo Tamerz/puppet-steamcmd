@@ -24,7 +24,7 @@ matrix:
     -
       env: CHECK=parallel_spec
     -
-      env: PUPPET_GEM_VERSION="~> 5.0" CHECK=parallel_spec
+      env: PUPPET_GEM_VERSION="~> 5.0" CHECK=parallel_spec DEPLOY_TO_FORGE=yes
       rvm: 2.4.4
 branches:
   only:
