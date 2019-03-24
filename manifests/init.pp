@@ -12,6 +12,7 @@ class steamcmd (
   String $download_path,
   String $archive_path,
   String $exe_name,
+  Array[Integer] $exit_codes,
   Optional[String] $user,
   Optional[String] $group,
   Optional[String] $file_mode,

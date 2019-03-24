@@ -40,6 +40,7 @@ describe 'steamcmd' do
             'command' => 'c:/steamcmd/steamcmd.exe +login anonymous +quit',
             'cwd'     => 'c:/steamcmd',
             'creates' => 'c:/steamcmd/public',
+            'returns' => [0, 7],
           )
         }
 
@@ -81,6 +82,7 @@ describe 'steamcmd' do
             'cwd'     => '/opt/steamcmd',
             'user'    => 'steamcmd',
             'creates' => '/opt/steamcmd/public',
+            'returns' => [0],
           )
         }
 

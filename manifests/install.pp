@@ -46,6 +46,7 @@ class steamcmd::install inherits steamcmd {
     cwd     => $steamcmd::installdir,
     user    => $steamcmd::user,
     creates => "${steamcmd::installdir}/public",
+    returns => $steamcmd::exit_codes,
   }
 
 }

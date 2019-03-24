@@ -7,3 +7,6 @@ steamcmd::group: null
 steamcmd::file_mode: null
 steamcmd::archive_path: 'c:/temp/steamcmd.zip'
 steamcmd::exe_name: 'steamcmd.exe'
+steamcmd::exit_codes:
+  - 0
+  - 7
