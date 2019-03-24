@@ -12,7 +12,7 @@ class steamcmd::install inherits steamcmd {
     ensure  => directory,
     owner   => $steamcmd::user,
     group   => $steamcmd::group,
-    mode    => '0755',
+    mode    => $steamcmd::file_mode,
     require => User[$steamcmd::user],
   }
 
@@ -45,7 +45,7 @@ class steamcmd::install inherits steamcmd {
     command => "${steamcmd::installdir}/${steamcmd::exe_name} +login anonymous +quit",
     cwd     => $steamcmd::installdir,
     user    => $steamcmd::user,
-    creates => "${steamcmd::installdir}/Steam",
+    creates => "${steamcmd::installdir}/public",
   }
 
 }

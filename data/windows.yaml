@@ -3,5 +3,7 @@ steamcmd::installdir: 'c:/steamcmd'
 steamcmd::download_path: 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip'
 steamcmd::required_packages: []
 steamcmd::user: null
+steamcmd::group: null
+steamcmd::file_mode: null
 steamcmd::archive_path: 'c:/temp/steamcmd.zip'
 steamcmd::exe_name: 'steamcmd.exe'
