@@ -1,5 +1,5 @@
 
-# steamcmd [![Build Status](https://travis-ci.org/Tamerz/puppet-steamcmd.svg?branch=master)](https://travis-ci.org/Tamerz/puppet-steamcmd)
+# steamcmd [![Build Status](https://api.travis-ci.com/Tamerz/puppet-steamcmd.svg?branch=main)](https://app.travis-ci.com/github/Tamerz/puppet-steamcmd)
 
 #### Table of Contents
 
