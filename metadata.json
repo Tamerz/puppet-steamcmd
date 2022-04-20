@@ -1,6 +1,6 @@
 {
   "name": "tamerz-steamcmd",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Tames McTigue",
   "summary": "Installs and configures the Steam Console Client (SteamCMD)",
   "license": "Apache-2.0",
@@ -21,31 +21,34 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "8"
+        "10",
+        "11"
+      ]
+    },
+    {
+      "operatingsystem": "Fedora",
+      "operatingsystemrelease": [
+        "29"
       ]
     },
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "7"
+        "8"
       ]
     },
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "16.04"
+        "18.04",
+        "20.04"
       ]
     },
     {
       "operatingsystem": "windows",
       "operatingsystemrelease": [
-        "2012 R2"
+        "2019",
+        "10"
       ]
     }
   ],
@@ -55,7 +58,7 @@
       "version_requirement": ">= 4.7.0 < 8.0.0"
     }
   ],
-  "pdk-version": "2.2.0",
-  "template-url": "pdk-default#2.2.0",
-  "template-ref": "tags/2.2.0-0-g2381db6"
+  "pdk-version": "2.4.0",
+  "template-url": "pdk-default#2.4.0",
+  "template-ref": "tags/2.4.0-0-gfa6b6d2"
 }
