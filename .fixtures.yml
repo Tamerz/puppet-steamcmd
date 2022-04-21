@@ -1,6 +1,8 @@
 fixtures:
+  forge_modules:
+    stdlib: "puppetlabs/stdlib"
+    archive: "puppet/archive"
   repositories:
-    "stdlib": "https://github.com/puppetlabs/puppetlabs-stdlib.git"
-    "archive": "https://github.com/voxpupuli/puppet-archive.git"
-  symlinks:
-    "steamcmd": "#{source_dir}"
+    facts: 'https://github.com/puppetlabs/puppetlabs-facts.git'
+    puppet_agent: 'https://github.com/puppetlabs/puppetlabs-puppet_agent.git'
+    provision: 'https://github.com/puppetlabs/provision.git'
