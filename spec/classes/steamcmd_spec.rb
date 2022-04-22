@@ -93,7 +93,7 @@ describe 'steamcmd' do
         when 'Debian'
           older_versions = ['9', '10', '18.04', '20.04']
           if older_versions.include? os_facts[:os]['release']['major']
-            it { is_expected.to contain_package('lib32gcc1')}
+            it { is_expected.to contain_package('lib32gcc1') }
           else
             it { is_expected.to contain_package('lib32gcc-s1') }
           end
