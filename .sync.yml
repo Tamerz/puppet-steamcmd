@@ -1,3 +1,21 @@
 ---
 spec/spec_helper.rb:
   mock_with: ':rspec'
+.gitlab-ci.yml:
+  delete: true
+appveyor.yml:
+  delete: true
+.travis.yml:
+  delete: true
+
+Gemfile:
+  optional:
+    ":development":
+    - gem: puppet_litmus
+      git: https://github.com/puppetlabs/puppet_litmus
+      ref: main
+      condition: Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.5.0')
+
+.github/workflows/spec.yml:
+  checks: 'syntax lint metadata_lint check:symlinks check:git_ignore check:dot_underscore check:test_file rubocop'
+  unmanaged: false

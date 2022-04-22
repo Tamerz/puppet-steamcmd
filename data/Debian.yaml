@@ -1,4 +1,3 @@
 ---
 steamcmd::required_packages:
-  - 'glibc'
-  - 'libstdc++'
+  - lib32gcc-s1

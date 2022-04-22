@@ -88,16 +88,14 @@ describe 'steamcmd' do
 
         case os_facts[:os]['family']
         when 'RedHat'
-          if os_facts[:architecture] == 'x86_64'
-            it { is_expected.to contain_package('glibc.i686') }
-            it { is_expected.to contain_package('libstdc++.i686') }
-          elsif os_facts[:architecture] == 'i386'
-            it { is_expected.to contain_package('glibc') }
-            it { is_expected.to contain_package('libstdc++') }
-          end
+          it { is_expected.to contain_package('glibc.i686') }
+          it { is_expected.to contain_package('libstdc++.i686') }
         when 'Debian'
-          if os_facts[:architecture] == 'x86_64'
-            it { is_expected.to contain_package('lib32gcc1') }
+          older_versions = ['9', '10', '18.04', '20.04']
+          if older_versions.include? os_facts[:os]['release']['major']
+            it { is_expected.to contain_package('lib32gcc1')}
+          else
+            it { is_expected.to contain_package('lib32gcc-s1') }
           end
         end
       end
