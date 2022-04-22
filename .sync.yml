@@ -1,3 +1,5 @@
 ---
 spec/spec_helper.rb:
   mock_with: ':rspec'
+.gitlab-ci.yml:
+  delete: true
