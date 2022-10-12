@@ -3,7 +3,7 @@ spec/spec_helper.rb:
   mock_with: ':rspec'
 .gitlab-ci.yml:
   delete: true
-appveyor.yml:
+.travis.yml:
   delete: true
 
 Gemfile:
