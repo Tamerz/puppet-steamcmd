@@ -1,4 +1,6 @@
 ---
+appveyor.yml:
+  use_litmus: true
 spec/spec_helper.rb:
   mock_with: ':rspec'
 .gitlab-ci.yml:
