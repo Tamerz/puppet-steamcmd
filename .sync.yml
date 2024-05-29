@@ -1,15 +1,8 @@
----
-spec/spec_helper.rb:
-  mock_with: ':rspec'
-.gitlab-ci.yml:
-  delete: true
-appveyor.yml:
-  delete: true
-
-Gemfile:
-  optional:
-    ":development":
-    - gem: puppet_litmus
-      git: https://github.com/puppetlabs/puppet_litmus
-      ref: main
-      condition: Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.5.0')
+# This file can be used to customize the files managed by PDK.
+#
+# See https://github.com/puppetlabs/pdk-templates/blob/main/README.md
+# for more information.
+#
+# See https://github.com/puppetlabs/pdk-templates/blob/main/config_defaults.yml
+# for the default values.
+--- {}
