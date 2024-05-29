@@ -1,8 +1,27 @@
 # steamcmd
 #
-# A description of what this class does
+# @summary Installs Valve Corporation's "Steam Console Client".
 #
-# @summary A short summary of the purpose of this class
+# @param installdir
+#   Where to install steamcmd
+#
+# @param required_packages
+#   Array of packages required
+#
+# @param download_path
+#   Location of the steamcmd download
+#
+# @param archive_path
+#
+# @param exe_name
+#
+# @param exit_codes
+#
+# @param user
+#
+# @param group
+#
+# @param file_mode
 #
 # @example
 #   include steamcmd
@@ -17,7 +36,5 @@ class steamcmd (
   Optional[String] $group,
   Optional[String] $file_mode,
 ) {
-
   contain steamcmd::install
-
 }

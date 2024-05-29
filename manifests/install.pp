@@ -1,13 +1,10 @@
 # steamcmd::install
 #
-# A description of what this class does
+# @summary Installs steamcmd
 #
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# @example
-#   include steamcmd::install
 class steamcmd::install inherits steamcmd {
-
   file { $steamcmd::installdir:
     ensure  => directory,
     owner   => $steamcmd::user,
@@ -48,5 +45,4 @@ class steamcmd::install inherits steamcmd {
     creates => "${steamcmd::installdir}/public",
     returns => $steamcmd::exit_codes,
   }
-
 }
